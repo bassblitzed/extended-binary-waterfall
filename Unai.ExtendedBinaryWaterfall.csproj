@@ -27,4 +27,14 @@
 		<PackageReference Include="FFmpeg.AutoGen" Version="7.0.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="libs\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="SDL2.dll">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
 </Project>

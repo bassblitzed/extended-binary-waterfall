@@ -44,7 +44,7 @@ public class Generator
 	public string Author { get; set; } = null;
 	public string InputFileFormatId { get; set; } = null;
 	public string ExporterId { get; set; } = null;
-	public int InputBytesPerSecond { get; set; } = 24000 * 2 * 2;
+	public int InputBytesPerSecond { get; set; } = 220000 * 2 * 2;
 	public int InputBytesPerFrame => InputBytesPerSecond / OutputFps;
 
 	// Video parameters.
@@ -183,12 +183,12 @@ public class Generator
 
 		_fontCollection = new();
 		_fontCollection.AddSystemFonts();
-		_fontFamily = _fontCollection.Get("unifont");
+		_fontFamily = _fontCollection.Get("Consolas");
 		_font48 = _fontFamily.CreateFont(48f, FontStyle.Regular);
 		_font32 = _fontFamily.CreateFont(32f, FontStyle.Regular);
 		_font24 = _fontFamily.CreateFont(24f, FontStyle.Regular);
 		_font16 = _fontFamily.CreateFont(16f, FontStyle.Regular);
-		_emojiFontFamily = _fontCollection.Get("unifont upper");
+		_emojiFontFamily = _fontCollection.Get("Consolas");
 
 		_timer.Start();
 
@@ -205,7 +205,7 @@ public class Generator
 	{
 		Logger.Info("Generating introduction…");
 
-		var totalFrames = (5 * OutputFps); // 60FPS = 300
+		var totalFrames = (0.5 * OutputFps); // 60FPS = 300
 
 		for (long frameNumber = 0; frameNumber < totalFrames; frameNumber++)
 		{
